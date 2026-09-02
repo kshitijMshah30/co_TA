@@ -1,3 +1,5 @@
+![co_TA project logo](assets/Co_TA.png)
+
 # co_TA
 
 This is the official repository for Purdue University's **co_TA VIP project**.
@@ -26,6 +28,14 @@ Future goals include:
 - **Multi-student scaling:** Support laboratory-scale demand of approximately 1,000 students.
 - **Multi-course support:** Make the platform course-agnostic.
 
+## Follow Our Progress
+
+To follow our progress, look at the following:
+
+- [Sub-team progress](Progress_tracker/Subteams/)
+- [Weekly meeting notes](Progress_tracker/Weekly%20meetings/)
+- [Individual progress](Progress_tracker/Individual/)
+
 ## Logistics
 
 - **Weekly meeting:** Wednesday, 2:30–3:20 p.m., BHEE 226
@@ -39,5 +49,3 @@ Future goals include:
 | Dr. Vijay Gupta | gupta869@purdue.edu |
 | Dr. Milind Kulkarni | milind@purdue.edu |
 | Kshitij Shah | shah1030@purdue.edu |
-
-![co_TA project logo](assets/Co_TA.png)
