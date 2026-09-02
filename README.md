@@ -1,4 +1,4 @@
-![co_TA project logo](assets/Co_TA.png)
+![co_TA project logo](assets/Co_TA_small.png)
 
 # co_TA
 
