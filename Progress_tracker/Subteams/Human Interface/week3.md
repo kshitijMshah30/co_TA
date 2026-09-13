@@ -2,7 +2,7 @@
 
 ## Overall Progress
 
-This week, each team member developed their own UI prototype for the project. We then compared our designs and discussed the features we liked most from each prototype. After agreeing on the best features, we combined them into a single UI design. Here is our final demo: https://vip-ai-ta-demo.netlify.app/
+This week, each team member developed their own UI prototype for the project. We then compared our designs and discussed the features we liked most from each prototype. After agreeing on the best features, we combined them into a single UI design. Here is our final demo for this week: https://vip-ai-ta-demo.netlify.app/
 
 ## Current Blockers
 
