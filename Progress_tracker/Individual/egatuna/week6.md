@@ -1,0 +1,10 @@
+# Week 6 (Sep 28 - Oct 2) - Eann Gatuna, Human Interface
+
+## What I achieved / worked on this week
+Finished student login. Students sign in with a Purdue email and the class password. Each student's chat history is saved under their own account, so two students on the same computer don't see each other's sessions. Login is on in development and Codespaces and off on the demo until we're ready to turn it on. Ethar and Siddarth then opened the sub-team's first pull requests. PR #1 (Ethar) adds per-student accounts with a small server and database. PR #2 (Siddarth) adds a first preview of the TA workspace, the teacher-facing side of the app. I reviewed and tested both in the browser and pushed fixes before merging. I fixed a save conflict that could let one device overwrite a student's history from another, and saves that fail now retry instead of being lost. A banner now tells the student when their work isn't saving, and sign-ups are limited per email. I also removed the class password from the tests. PR #2 conflicted with Ethar's new login, so I rebuilt its Student/TA switch on top of it. Both are merged into main and all 119 tests pass. Demo (mock mode): https://vip-ai-ta-demo.netlify.app
+
+## What I am blocked on
+The Intelligence API. The live path is still proven only against my stub, and Intelligence hasn't confirmed my proposed lab IDs and step names yet. Page 10 still has three open decisions: image transfer, the annotation box format, and CORS for the demo. The sub-team also needs to decide whether students should see the TA preview link.
+
+## What I plan to do next week
+Rotate the class password, since the old one is still in the repo history. Check FERPA requirements with the advisors before any real student signs in. Work with the team on the OUR Research Expo abstract, due Oct 14. Fix the safety banner that mentions a function generator Labs 1-2 don't use. When the API is ready, run `contract-check` and the seven shared cases against it and switch the demo to live.
