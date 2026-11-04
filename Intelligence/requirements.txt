@@ -1,0 +1,18 @@
+# Ingestion (embed_folder.py, upload_to_supabase.py)
+numpy
+pypdf
+sentence-transformers
+requests
+
+# RAG service (rag/)
+fastapi
+uvicorn[standard]
+pydantic>=2
+
+# LLM backends - install the one you use
+anthropic      # LLM_BACKEND=anthropic
+openai         # LLM_BACKEND=openai_compatible (OpenAI, vLLM, Ollama, ...)
+
+# Tests
+pytest
+httpx
