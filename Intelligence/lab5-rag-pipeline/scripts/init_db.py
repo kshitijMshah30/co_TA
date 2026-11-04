@@ -51,7 +51,7 @@ def init_db():
         )
     """)
 
-    print("Creating indexes...")
+    print("Creating indexes and unique constraints...")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_chunks_lab_id ON chunks(lab_id)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_chunks_document_id ON chunks(document_id)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_documents_lab_id ON documents(lab_id)")
@@ -59,6 +59,9 @@ def init_db():
         CREATE INDEX IF NOT EXISTS idx_chunks_embedding ON chunks
         USING hnsw (embedding vector_cosine_ops)
     """)
+    # Unique constraints needed for ON CONFLICT upserts in ingest.py
+    cur.execute("CREATE UNIQUE INDEX IF NOT EXISTS uniq_documents_lab_id ON documents(lab_id)")
+    cur.execute("CREATE UNIQUE INDEX IF NOT EXISTS uniq_chunks_lab_content ON chunks(lab_id, content_hash)")
 
     print("Creating match_chunks function...")
     cur.execute("""

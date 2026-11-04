@@ -33,10 +33,14 @@ CREATE TABLE IF NOT EXISTS chunks (
     created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- 4. Indexes
+-- 4. Indexes and unique constraints
 CREATE INDEX IF NOT EXISTS idx_chunks_lab_id ON chunks(lab_id);
 CREATE INDEX IF NOT EXISTS idx_chunks_document_id ON chunks(document_id);
 CREATE INDEX IF NOT EXISTS idx_documents_lab_id ON documents(lab_id);
+
+-- Unique constraints needed for ON CONFLICT upserts in ingest.py
+CREATE UNIQUE INDEX IF NOT EXISTS uniq_documents_lab_id ON documents(lab_id);
+CREATE UNIQUE INDEX IF NOT EXISTS uniq_chunks_lab_content ON chunks(lab_id, content_hash);
 
 -- 5. HNSW index for fast cosine similarity search
 CREATE INDEX IF NOT EXISTS idx_chunks_embedding ON chunks

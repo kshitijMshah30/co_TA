@@ -47,32 +47,28 @@ def ingest_lab(pdf_path: str | Path, lab_id: str = "lab_5") -> dict:
     try:
         cur = conn.cursor()
 
-        # Skip if this exact file is already uploaded
-        cur.execute(
-            "SELECT id FROM documents WHERE lab_id = %s AND source_hash = %s",
-            (lab_id, source_hash),
-        )
-        if cur.fetchone():
-            print(f"Lab {lab_id} already uploaded with same file — skipping.")
-            conn.close()
-            return {"filename": pdf_path.name, "skipped": True}
-
-        # Insert document row
+        # Upsert document row — one row per lab_id, update filename/hash if PDF changed
         cur.execute(
             """INSERT INTO documents (lab_id, filename, source_hash)
-               VALUES (%s, %s, %s) RETURNING id""",
+               VALUES (%s, %s, %s)
+               ON CONFLICT (lab_id) DO UPDATE
+                 SET filename = EXCLUDED.filename,
+                     source_hash = EXCLUDED.source_hash
+               RETURNING id""",
             (lab_id, pdf_path.name, source_hash),
         )
         doc_id = cur.fetchone()[0]
 
-        # Insert chunks with embeddings
+        # Insert chunks — skip any whose content hasn't changed
+        inserted = 0
         for chunk, embedding in zip(chunks, embeddings):
             content_hash = hashlib.sha256(chunk["content"].encode()).hexdigest()
             cur.execute(
                 """INSERT INTO chunks
                    (document_id, lab_id, chunk_index, page_start, page_end,
                     section, content, content_hash, embedding, metadata)
-                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s::vector, %s)""",
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s::vector, %s)
+                   ON CONFLICT (lab_id, content_hash) DO NOTHING""",
                 (
                     doc_id,
                     chunk["lab_id"],
@@ -86,9 +82,10 @@ def ingest_lab(pdf_path: str | Path, lab_id: str = "lab_5") -> dict:
                     '{"source": "' + pdf_path.name + '"}',
                 ),
             )
+            inserted += cur.rowcount
 
         conn.commit()
-        print(f"Rows inserted: {len(chunks)}")
+        print(f"Rows inserted: {inserted} (skipped {len(chunks) - inserted} duplicates)")
         print(f"Lab {lab_id} ingestion complete.")
 
         return {
