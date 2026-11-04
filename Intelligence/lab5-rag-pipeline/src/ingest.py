@@ -47,9 +47,15 @@ def ingest_lab(pdf_path: str | Path, lab_id: str = "lab_5") -> dict:
     try:
         cur = conn.cursor()
 
-        # Delete existing data for this lab (idempotent re-ingestion)
-        cur.execute("DELETE FROM chunks WHERE lab_id = %s", (lab_id,))
-        cur.execute("DELETE FROM documents WHERE lab_id = %s", (lab_id,))
+        # Skip if this exact file is already uploaded
+        cur.execute(
+            "SELECT id FROM documents WHERE lab_id = %s AND source_hash = %s",
+            (lab_id, source_hash),
+        )
+        if cur.fetchone():
+            print(f"Lab {lab_id} already uploaded with same file — skipping.")
+            conn.close()
+            return {"filename": pdf_path.name, "skipped": True}
 
         # Insert document row
         cur.execute(
