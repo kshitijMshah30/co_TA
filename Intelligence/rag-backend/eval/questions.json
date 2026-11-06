@@ -1,0 +1,298 @@
+[
+  {
+    "id": "q01",
+    "question": "What is the formula for the capacitance of a parallel plate capacitor?",
+    "expected_chunk_ids": [14],
+    "expected_section": "3",
+    "expected_page": 1,
+    "in_scope": true
+  },
+  {
+    "id": "q02",
+    "question": "What's the difference between polarized and non-polarized capacitors?",
+    "expected_chunk_ids": [14, 15],
+    "expected_section": "3",
+    "expected_page": 1,
+    "in_scope": true
+  },
+  {
+    "id": "q03",
+    "question": "How can I tell which lead of a polarized capacitor is the anode?",
+    "expected_chunk_ids": [15],
+    "expected_section": "1",
+    "expected_page": 1,
+    "in_scope": true
+  },
+  {
+    "id": "q04",
+    "question": "Why can polarized capacitors be dangerous if wired backwards?",
+    "expected_chunk_ids": [15],
+    "expected_section": "1",
+    "expected_page": 1,
+    "in_scope": true
+  },
+  {
+    "id": "q05",
+    "question": "What happens to the charge on a capacitor once it's removed from the circuit?",
+    "expected_chunk_ids": [17],
+    "expected_section": "4.1",
+    "expected_page": 2,
+    "in_scope": true
+  },
+  {
+    "id": "q06",
+    "question": "What is a decoupling capacitor used for?",
+    "expected_chunk_ids": [17],
+    "expected_section": "4.1",
+    "expected_page": 2,
+    "in_scope": true
+  },
+  {
+    "id": "q07",
+    "question": "How do you calculate the total capacitance of capacitors in parallel?",
+    "expected_chunk_ids": [18],
+    "expected_section": "4.2",
+    "expected_page": 2,
+    "in_scope": true
+  },
+  {
+    "id": "q08",
+    "question": "How do you calculate the total capacitance of capacitors in series?",
+    "expected_chunk_ids": [19],
+    "expected_section": "1",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q09",
+    "question": "Are capacitors in series and parallel the same as resistors in series and parallel?",
+    "expected_chunk_ids": [18],
+    "expected_section": "4.2",
+    "expected_page": 2,
+    "in_scope": true
+  },
+  {
+    "id": "q10",
+    "question": "What is the RC time constant and how do I calculate it?",
+    "expected_chunk_ids": [20],
+    "expected_section": "4.3",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q11",
+    "question": "After how many time constants is a capacitor considered fully charged?",
+    "expected_chunk_ids": [20],
+    "expected_section": "4.3",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q12",
+    "question": "If I have a 10V source, a 10K ohm resistor, and a 0.1mF capacitor, what's the voltage on the capacitor after one time constant?",
+    "expected_chunk_ids": [20],
+    "expected_section": "4.3",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q13",
+    "question": "What equation describes the voltage across a capacitor while it's charging over time?",
+    "expected_chunk_ids": [20, 21],
+    "expected_section": "4.3",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q14",
+    "question": "What equation describes the current in an RC circuit while the capacitor charges?",
+    "expected_chunk_ids": [21],
+    "expected_section": "1 −e−(t−t0)/τ\u0011",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q15",
+    "question": "How does a discharging capacitor's voltage behave over time?",
+    "expected_chunk_ids": [22],
+    "expected_section": "3",
+    "expected_page": 3,
+    "in_scope": true
+  },
+  {
+    "id": "q16",
+    "question": "Why shouldn't I measure the voltage across a capacitor directly with a multimeter in an RC circuit?",
+    "expected_chunk_ids": [23],
+    "expected_section": "4.4",
+    "expected_page": 4,
+    "in_scope": true
+  },
+  {
+    "id": "q17",
+    "question": "How can I measure the voltage across a capacitor without discharging it through my meter?",
+    "expected_chunk_ids": [23],
+    "expected_section": "4.4",
+    "expected_page": 4,
+    "in_scope": true
+  },
+  {
+    "id": "q18",
+    "question": "What is a Device Under Test (DUT) in the context of this lab?",
+    "expected_chunk_ids": [23],
+    "expected_section": "4.4",
+    "expected_page": 4,
+    "in_scope": true
+  },
+  {
+    "id": "q19",
+    "question": "How do you manually discharge a capacitor?",
+    "expected_chunk_ids": [23, 24],
+    "expected_section": "4.4",
+    "expected_page": 4,
+    "in_scope": true
+  },
+  {
+    "id": "q20",
+    "question": "What is the purpose of a pull-down resistor on a switch?",
+    "expected_chunk_ids": [25],
+    "expected_section": "5",
+    "expected_page": 5,
+    "in_scope": true
+  },
+  {
+    "id": "q21",
+    "question": "What's the difference between a pull-up and pull-down resistor configuration?",
+    "expected_chunk_ids": [25],
+    "expected_section": "5",
+    "expected_page": 5,
+    "in_scope": true
+  },
+  {
+    "id": "q22",
+    "question": "Why is it dangerous to connect a switch without a series resistor?",
+    "expected_chunk_ids": [25],
+    "expected_section": "5",
+    "expected_page": 5,
+    "in_scope": true
+  },
+  {
+    "id": "q23",
+    "question": "How is an inductor different from a capacitor in terms of charging and discharging behavior?",
+    "expected_chunk_ids": [27],
+    "expected_section": "5",
+    "expected_page": 5,
+    "in_scope": true
+  },
+  {
+    "id": "q24",
+    "question": "What does Roll mode do on an oscilloscope and when is it useful?",
+    "expected_chunk_ids": [43],
+    "expected_section": "7.2",
+    "expected_page": 7,
+    "in_scope": true
+  },
+  {
+    "id": "q25",
+    "question": "What is XY mode on an oscilloscope?",
+    "expected_chunk_ids": [43],
+    "expected_section": "7.2",
+    "expected_page": 7,
+    "in_scope": true
+  },
+  {
+    "id": "q26",
+    "question": "What is edge triggering on an oscilloscope?",
+    "expected_chunk_ids": [44],
+    "expected_section": "7.3",
+    "expected_page": 7,
+    "in_scope": true
+  },
+  {
+    "id": "q27",
+    "question": "What's the difference between Normal mode and Auto mode triggering?",
+    "expected_chunk_ids": [45, 46],
+    "expected_section": "7.3.1",
+    "expected_page": 7,
+    "in_scope": true
+  },
+  {
+    "id": "q28",
+    "question": "What do the cursors on an oscilloscope measure?",
+    "expected_chunk_ids": [47],
+    "expected_section": "7.4",
+    "expected_page": 8,
+    "in_scope": true
+  },
+  {
+    "id": "q29",
+    "question": "Can an oscilloscope measure current directly?",
+    "expected_chunk_ids": [48],
+    "expected_section": "8",
+    "expected_page": 8,
+    "in_scope": true
+  },
+  {
+    "id": "q30",
+    "question": "Why shouldn't I plug an oscilloscope probe directly into a breadboard?",
+    "expected_chunk_ids": [48],
+    "expected_section": "8",
+    "expected_page": 8,
+    "in_scope": true
+  },
+  {
+    "id": "q31",
+    "question": "What is a phantom line when de-bouncing a switch, and what causes it?",
+    "expected_chunk_ids": [55],
+    "expected_section": "12",
+    "expected_page": 11,
+    "in_scope": true
+  },
+  {
+    "id": "q32",
+    "question": "How do you fix phantom lines / bouncing when de-bouncing a switch?",
+    "expected_chunk_ids": [55, 56],
+    "expected_section": "11",
+    "expected_page": 11,
+    "in_scope": true
+  },
+  {
+    "id": "q33",
+    "question": "What is the capacity of the Great Barrier Reef's coral biomass?",
+    "expected_chunk_ids": [],
+    "expected_section": null,
+    "expected_page": null,
+    "in_scope": false
+  },
+  {
+    "id": "q34",
+    "question": "How do I set up a linear regression model in Python using scikit-learn?",
+    "expected_chunk_ids": [],
+    "expected_section": null,
+    "expected_page": null,
+    "in_scope": false
+  },
+  {
+    "id": "q35",
+    "question": "What's the best way to prepare for the ECE 2k7 final exam covering all labs?",
+    "expected_chunk_ids": [],
+    "expected_section": null,
+    "expected_page": null,
+    "in_scope": false
+  },
+  {
+    "id": "q36",
+    "question": "Can you explain how a BJT transistor amplifier works?",
+    "expected_chunk_ids": [],
+    "expected_section": null,
+    "expected_page": null,
+    "in_scope": false
+  },
+  {
+    "id": "q37",
+    "question": "What's the weather going to be like for the lab session this week?",
+    "expected_chunk_ids": [],
+    "expected_section": null,
+    "expected_page": null,
+    "in_scope": false
+  }
+]
