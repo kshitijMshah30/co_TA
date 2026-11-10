@@ -1,0 +1,10 @@
+# Week 11 (Nov 2 - Nov 6) - Eann Gatuna, Human Interface
+
+## What I achieved / worked on this week
+Havish's capacitor and inductor codes tool (PR #11) is merged into main. I reviewed and tested it: the code math was right, and every row in his test table passed. I added one commit on his branch before merging. The PR said the tool was a per-course tool that starts off, but it was never registered as one, so it showed in every course and TAs couldn't turn it off. It is now a course tool like resistor codes: on for ECE 20007, off for new courses, and a TA can switch it in Course setup. Manuals that mention capacitors, inductors or RC circuits suggest turning it on. I also fixed values typed with a unit and no prefix ("1H", "2F"), which were read a million times too small, and undid unrelated lockfile changes. All 326 tests pass, the build is clean, and I checked it in the browser. Everyone should run `git pull origin main`. Browsers that saved ECE 20007 before this change show the tab off until a TA turns it on in TA preview > Course setup.
+
+## What I am blocked on
+Connecting to Intelligence. On Nov 3 they posted a draft API contract (`API_CONTRACT.md`, v0.1) that asks for Human Interface sign-off. It is different from the contract we built against in week 4: a new endpoint (`POST /v1/ask`), conversation history sent by us, and a plain reply with flags instead of response types, step, measurements or images. Until the sub-teams agree on one shape, the live path is still proven only against my stub. Lab sessions still need a FERPA check with the advisors before real students use them.
+
+## What I plan to do next week
+Redeploy the demo so it shows course profiles, the Pinout tab, lab sessions and the new codes tool (it is still on the Oct 19 version). Rotate the class password. Pick up the QueUp button if nobody has claimed it, and clean up old merged branches after a heads-up to the team. Review Intelligence's v0.1 contract and reply on what our UI needs, then update the adapter to `/v1/ask` and test it against their mock server.
